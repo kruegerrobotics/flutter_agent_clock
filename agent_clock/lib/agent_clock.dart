@@ -130,7 +130,7 @@ class _AnalogClockState extends State<AnalogClock> {
             frameCounter = 0;
           }
         }
-       //print("w ${MediaQuery.of(context).size.width} h${MediaQuery.of(context).size.height}");
+     
         //activate gravity to remove dots from screen
         if (_now.second > 55) {
           agents.forEach((a) {
@@ -144,17 +144,14 @@ class _AnalogClockState extends State<AnalogClock> {
   }
 
   void createNewPath() {
-    int h1;
-    int h2;
+   
+    //This could be reworked to work easy with multiple fonts and space
+    //Now it is more or less static
+    int h1 = (DateTime.now().hour ~/ 10).toInt();
+    int h2 = DateTime.now().hour % 10;
 
-    int m1;
-    int m2;
-
-    h1 = (DateTime.now().hour ~/ 10).toInt();
-    h2 = DateTime.now().hour % 10;
-
-    m1 = (DateTime.now().minute ~/ 10).toInt();
-    m2 = DateTime.now().minute % 10;
+    int m1 = (DateTime.now().minute ~/ 10).toInt();
+    int m2 = DateTime.now().minute % 10;
     
     double xOffset = 30.0;
     double correctionOffset = 80;
@@ -167,12 +164,6 @@ class _AnalogClockState extends State<AnalogClock> {
     double scale = 0.25;
     double precision = 0.035;
     mPath.clear();
-
-    // h1 = 1;
-    // h2 = 1;
-
-    // m1 = 1;
-    // m2 = 1;
 
     if (h1 == 1) {
       h1Offset = xOffset + correctionOffset;
@@ -242,7 +233,7 @@ class _AnalogClockState extends State<AnalogClock> {
         color: Colors.black,
         child: Center(
             child: Container(
-          color: Color.fromARGB(255, 80, 80, 80),
+          color: Color.fromARGB(255, 60, 60, 60),
           /*width: 640,
           height: 480,*/
           width: MediaQuery.of(context).size.width,

@@ -35,7 +35,7 @@ class ClockPainter extends CustomPainter {
       agents[i].update();
       double x = SizeUtil.getAxisY(agents[i].pos.x);
       double y = SizeUtil.getAxisY(agents[i].pos.y);
-      canvas.drawCircle(Offset(x, y), SizeUtil.getAxisBoth(2), _paint);
+      canvas.drawCircle(Offset(x, y), SizeUtil.getAxisBoth(3), _paint);
     }
   }
 

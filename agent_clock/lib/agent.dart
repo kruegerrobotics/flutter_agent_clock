@@ -44,6 +44,7 @@ class Agent {
     //desired.setMag(speed);
     Vector2 steer = desired - vel;
     //steer.clamp(Vector2(0,0), Vector2(-this.maxForce, this.maxForce));
+    steer.clampScalar(-this.maxForce, this.maxForce);
     return steer;
   }
 
