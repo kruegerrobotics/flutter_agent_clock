@@ -20,6 +20,8 @@ More and more dots floating in
 
 ![alt text](flutter_clock_3.png "Dots will be cleared before next minute")
 
+## How to build
+
 Flutter should have been [installed](https://flutter.dev/docs/get-started/install)
 
 ``` bash
