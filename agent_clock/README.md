@@ -4,7 +4,7 @@ A visualization of a clock using simple agents and physics.
 
 ## Description
 
-The digits of the clock are basically letters or svg paths. These paths are broken down into pieces. The pieces are postions which will get occupied with "agents". These agents spawn at and have the goal to reach a random spot on these paths thus slowly reavealing the time.
+The digits of the clock are basically letters or svg paths. These paths are broken down into pieces. The pieces are postions which will get occupied with "agents". These agents spawn at and have the goal to reach a random spot on these paths thus slowly reavealing the time. The spawn location is a position outside the screen where the second hand would be - it wanders clockwise around the scene.
 
 ## Inspiration
 
@@ -16,12 +16,13 @@ This project uses the public availabe flutter library [Text to Path Maker](https
 
 ## Ideas for further improvement
 
-### Multiple fonts
+### Multiple fonts and "text to point"
 
-Refine the text to path maker or develop an algorithm that breaks the TTF font path and can put dots on the path in equal distance. This would allow the use of any font. At this point in time the point allocation is on certain fonts not equidistant and not visually appealing.
+Refine the text to path maker or develop an algorithm that breaks the TTF font path and can put dots on the path in equal distance. This would allow the use of any font. At this point in time the point allocation is on certain fonts not equidistant and not visually appealing. The overall coding of the postioning should be less static
 
 The algorithm could be improved inspired by (textToPoints)[https://p5js.org/reference/#/p5.Font/textToPoints] from the p5js project.
 
 ### Other ideas
 
 - Improve the streaming in of the agents depending on weather
+

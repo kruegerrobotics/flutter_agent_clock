@@ -234,6 +234,7 @@ class _AnalogClockState extends State<AnalogClock> {
         child: Center(
             child: Container(
           color: Color.fromARGB(255, 60, 60, 60),
+          //color : Colors.black,
           /*width: 640,
           height: 480,*/
           width: MediaQuery.of(context).size.width,
