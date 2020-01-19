@@ -6,6 +6,18 @@ A visualization of a clock using simple agents and physics.
 
 The digits of the clock are basically letters or svg paths. These paths are broken down into pieces. The pieces are postions which will get occupied with "agents". These agents spawn at and have the goal to reach a random spot on these paths thus slowly reavealing the time. The spawn location is a position outside the screen where the second hand would be - it wanders clockwise around the scene.
 
+## How to build
+
+Flutter should have been [installed](https://flutter.dev/docs/get-started/install)
+
+``` bash
+git clone https://github.com/kruegerrobotics/flutter_agent_clock.git
+cd flutter_agent_clock
+cd agent_clock
+flutter create .
+flutter run
+```
+
 ## Inspirations
 
 ### The coding train
