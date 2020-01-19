@@ -1,16 +1,27 @@
-# agent_clock
+# Agent clock
 
-A new Flutter project.
+A visualization of a clock using simple agents and physics.
 
-## Getting Started
+## Description
 
-This project is a starting point for a Flutter application.
+The digits of the clock are basically letters or svg paths. These paths are broken down into pieces. The pieces are postions which will get occupied with "agents". These agents spawn at and have the goal to reach a random spot on these paths thus slowly reavealing the time.
 
-A few resources to get you started if this is your first Flutter project:
+## Inspiration
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
+This project was inspired by The Coding Train Challenge [#59: Steering behaviors](https://www.youtube.com/watch?v=4hA7G3gup-4&feature=youtu.be) Thanks to Daniel Shiffman!
 
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## 3rd Party library use
+
+This project uses the public availabe flutter library [Text to Path Maker](https://pub.dev/packages/text_to_path_maker). For breaking the TTF into segments,
+
+## Ideas for further improvement
+
+### Multiple fonts
+
+Refine the text to path maker or develop an algorithm that breaks the TTF font path and can put dots on the path in equal distance. This would allow the use of any font. At this point in time the point allocation is on certain fonts not equidistant and not visually appealing.
+
+The algorithm could be improved inspired by (textToPoints)[https://p5js.org/reference/#/p5.Font/textToPoints] from the p5js project.
+
+### Other ideas
+
+- Improve the streaming in of the agents depending on weather
