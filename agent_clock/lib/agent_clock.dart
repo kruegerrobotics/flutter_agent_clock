@@ -46,6 +46,8 @@ class _AnalogClockState extends State<AnalogClock> {
   int lastMinute = -1;
   bool initComplete = false;
 
+  Color backGroundColor = Color.fromARGB(255, 60, 60, 60);
+
   @override
   void initState() {
     super.initState();
@@ -227,13 +229,13 @@ class _AnalogClockState extends State<AnalogClock> {
       properties: SemanticsProperties(
         label: 'Analog clock with time $time',
         value: time,
+    
       ),
       child: Container(
-        //color: customTheme.backgroundColor,
-        color: Colors.black,
+        color: backGroundColor,
         child: Center(
             child: Container(
-          color: Color.fromARGB(255, 60, 60, 60),
+          color: backGroundColor,
           //color : Colors.black,
           /*width: 640,
           height: 480,*/
