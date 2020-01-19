@@ -22,9 +22,9 @@ class Agent {
     Random rnd = new Random();
     int min = 6;
     int max = 24;
-    int r = min + rnd.nextInt(max-min);
-    
-    gravity = Vector2(0, r.toDouble()/10.0);
+    int r = min + rnd.nextInt(max - min);
+
+    gravity = Vector2(0, r.toDouble() / 10.0);
   }
 
   void applyForce(Vector2 force) {
@@ -64,6 +64,6 @@ class Agent {
 
   void fallDown() {
     alive = false;
-    applyForce(gravity);    
+    applyForce(gravity);
   }
 }

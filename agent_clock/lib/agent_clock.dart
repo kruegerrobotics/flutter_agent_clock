@@ -31,7 +31,7 @@ class AnalogClock extends StatefulWidget {
 
 class _AnalogClockState extends State<AnalogClock> {
   var _now = DateTime.now();
- 
+
   Timer _timer;
   int frameRate = 60;
   int frameCounter = 0;
@@ -120,19 +120,20 @@ class _AnalogClockState extends State<AnalogClock> {
         if (frameCounter >= frameRate / pointsPerSecond) {
           if (emptyPoints.length > 0) {
             Offset target = emptyPoints.removeLast();
-            
+
             //calculate the releasepoint
             //the release point is approximately the location
             //of the hand representing the seconds - should go clockwise around
             double direction = map(_now.second.toDouble(), 0, 60, 0, 360);
-            var releasePoint = Offset.fromDirection(radians(direction - 90), 400) +
-                Offset(320, 240);
+            var releasePoint =
+                Offset.fromDirection(radians(direction - 90), 400) +
+                    Offset(320, 240);
             agents.add(new Agent(Vector2(releasePoint.dx, releasePoint.dy),
                 Vector2(target.dx, target.dy)));
             frameCounter = 0;
           }
         }
-     
+
         //activate gravity to remove dots from screen
         if (_now.second > 55) {
           agents.forEach((a) {
@@ -146,7 +147,6 @@ class _AnalogClockState extends State<AnalogClock> {
   }
 
   void createNewPath() {
-   
     //This could be reworked to work easy with multiple fonts and space
     //Now it is more or less static
     int h1 = (DateTime.now().hour ~/ 10).toInt();
@@ -154,7 +154,7 @@ class _AnalogClockState extends State<AnalogClock> {
 
     int m1 = (DateTime.now().minute ~/ 10).toInt();
     int m2 = DateTime.now().minute % 10;
-    
+
     double xOffset = 30.0;
     double correctionOffset = 80;
     double h1Offset;
@@ -177,10 +177,9 @@ class _AnalogClockState extends State<AnalogClock> {
     var h1Pieces = PMPieces.breakIntoPieces(h1Path, precision).points;
     xOffset = xOffset + distance;
 
-    
-    if (h2 == 1){
+    if (h2 == 1) {
       h2Offset = xOffset + correctionOffset;
-    }else {
+    } else {
       h2Offset = xOffset;
     }
 
@@ -224,12 +223,11 @@ class _AnalogClockState extends State<AnalogClock> {
   @override
   Widget build(BuildContext context) {
     final time = DateFormat.Hms().format(DateTime.now());
-    
+
     return Semantics.fromProperties(
       properties: SemanticsProperties(
         label: 'Analog clock with time $time',
         value: time,
-    
       ),
       child: Container(
         color: backGroundColor,
@@ -249,4 +247,3 @@ class _AnalogClockState extends State<AnalogClock> {
     );
   }
 }
-

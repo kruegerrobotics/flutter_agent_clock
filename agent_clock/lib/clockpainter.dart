@@ -14,7 +14,7 @@ class ClockPainter extends CustomPainter {
     _paint = Paint()
       ..color = Colors.white
       ..strokeWidth = 5.0
-      ..strokeCap = StrokeCap.round;   
+      ..strokeCap = StrokeCap.round;
   }
 
   @override
